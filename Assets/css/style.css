@@ -1,15 +1,7 @@
-/* 
-@keyframes backgroundChange {
-    0% { background-image: url('/Assets/images/hero_lorry_plane.png'); }
-    50% { background-image: url('/Assets/images/hero_plane.png'); }
-    100% { background-image: url('/Assets/images/hero_ship.png'); }
+body {
+    font-family: "Poppins", serif;
+    
 }
-
-.hero {
-    animation: backgroundChange 10s infinite;
-}
-
- */
 
  .carousel .hero {
     display: none;
