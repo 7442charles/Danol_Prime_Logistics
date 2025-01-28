@@ -59,7 +59,7 @@
 
             <!-- CTA Button (Visible only on Desktop) -->
             <div class="hidden md:block">
-                <a href="#" class="bg-[#FFFFFF] text-[#000066] px-6 py-2 text-sm font-semibold uppercase rounded-lg">Request A Quote</a>
+                <a href="#" class="bg-[#FFFFFF] text-[#000066] px-6 py-2 text-sm font-semibold uppercase rounded-lg openModal">Request A Quote</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -79,7 +79,7 @@
                 <li><a href="index.html#contact_us" class="block text-[#000066]">Contact Us</a></li>
                 <!-- CTA Button in Mobile Menu -->
                 <li>
-                    <a href="#" class="bg-[#FFFFFF] text-[#000066] px-6 py-2 text-sm font-semibold uppercase rounded-lg">Request A Quote</a>
+                    <a href="#" class="bg-[#FFFFFF] text-[#000066] px-6 py-2 text-sm font-semibold uppercase rounded-lg openModal">Request A Quote</a>
                 </li>
             </ul>
         </div>
@@ -90,7 +90,7 @@
         <div class="bg-[#000066] text-white text-center rounded-lg py-12 px-6 relative">
             <h1 id="carousel-heading" class="text-2xl md:text-3xl font-bold mb-4"></h1>
             <p id="carousel-text" class="text-gray-300 max-w-xl mx-auto"></p>
-            <button class="bg-[#29B3E4] hover:bg-blue-600 text-white font-bold py-2 px-6 mt-4 rounded-lg">
+            <button class="bg-[#29B3E4] hover:bg-blue-600 text-white font-bold py-2 px-6 mt-4 rounded-lg openModal">
                 Request a quote for shipping services
             </button>
         </div>
@@ -150,7 +150,7 @@
     <div class="flex items-center gap-2">
         <img src="Assets/images/footer_logo.png" alt="Health Versations Logo" class="h-16">
     </div>
-    <button class="bg-[#5EACE8] text-[#000066] px-6 py-2 font-medium rounded-lg">
+    <button class="bg-[#5EACE8] text-[#000066] px-6 py-2 font-medium rounded-lg openModal">
         Request a quote for shipping services
     </button>
     </div>
@@ -228,5 +228,80 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+
+    <!-- modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <!-- Modal Content -->
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-[#000066]">Request a Quote</h2>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <form class="p-6">
+                <div class="space-y-4">
+                    <!-- Name Input -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <!-- Email Input -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <!-- Phone Input -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <!-- Service Selection -->
+                    <div>
+                        <label for="service" class="block text-sm font-medium text-gray-700">Service Interested In</label>
+                        <select id="service" name="service" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select a service</option>
+                            <option value="import-export">Import/Export Transport</option>
+                            <option value="clearing">Clearing and Forwarding</option>
+                            <option value="transport">Transport and Delivery</option>
+                            <option value="custom">Custom Logistics Solutions</option>
+                        </select>
+                    </div>
+
+                    <!-- Additional Comments -->
+                    <div>
+                        <label for="comments" class="block text-sm font-medium text-gray-700">Additional Comments</label>
+                        <textarea id="comments" name="comments" rows="4"
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-6">
+                    <button type="submit"
+                    class="bg-[#5EACE8] text-[#000066] px-6 py-2 font-medium rounded-lg">
+                        Submit Quote Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="Assets/js/modal.js"></script>
+
 </body>
 </html>
