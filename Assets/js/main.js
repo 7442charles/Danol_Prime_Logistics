@@ -35,3 +35,15 @@ let currentSlide = 0;
   setInterval(() => {
     showSlide(currentSlide + 1);
   }, 5000);
+
+
+  //for caching servics worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('Assets/js/service_worker.js').then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      }).catch(function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+    });
+  }
