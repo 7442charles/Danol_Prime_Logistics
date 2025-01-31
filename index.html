@@ -27,6 +27,11 @@
         <!-- Favicons -->
         <link rel="icon" href="Assets/images/FAVICON.png"  type="image/png">
         <link rel="apple-touch-icon" href="Assets/images/facicon.png">
+
+        <!-- preload fonts -->
+        <link rel="preload" href="/Assets/fonts/poppins.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+
       
           <!-- fonts -->
           <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
@@ -35,10 +40,19 @@
       
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com" defer></script>
-
-      
+       
         <link rel="stylesheet" href="Assets/css/style.css">
         <script src="Assets/js/lazyloader.js" defer></script>
+
+        <style>
+            .carousel .hero {
+                display: none;
+            }
+
+            .carousel .hero:first-child {
+                display: block;
+            }
+        </style>
     </head>
 
 <body class="antialiased text-gray-800">
